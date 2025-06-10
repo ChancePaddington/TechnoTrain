@@ -1,0 +1,34 @@
+{
+    "name": "Mobile Actions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "25118f7d-ac4b-4eb5-a823-c99444ac6dc6",
+            "actions": [
+                {
+                    "name": "Tap",
+                    "type": "Button",
+                    "id": "d5c3b0d3-784a-4b54-aec4-087a9b2d40d8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "acb53563-d150-42c8-95f6-1d40db04e5d8",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
