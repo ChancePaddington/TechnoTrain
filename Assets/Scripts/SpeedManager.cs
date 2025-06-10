@@ -1,4 +1,3 @@
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class SpeedManager : MonoBehaviour
@@ -22,17 +21,17 @@ public class SpeedManager : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed);  
     }
 
-    private void OnEnable()
-    {
-        InputManager.OnTap += MoveOnBeat;
-    }
+    //private void OnEnable()
+    //{
+    //    InputManager.OnTap += MoveOnBeat;
+    //}
 
-    private void OnDisable()
-    {
-        InputManager.OnTap -= MoveOnBeat;
-    }
+    //private void OnDisable()
+    //{
+    //    InputManager.OnTap -= MoveOnBeat;
+    //}
 
-    private void MoveOnBeat()
+    public void MoveOnBeat()
     {
         if (beatChecker.activeSelf)
         {

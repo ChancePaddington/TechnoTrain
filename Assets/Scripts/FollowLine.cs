@@ -35,22 +35,21 @@ public class FollowLine : MonoBehaviour
     {
         MoveToTarget();
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            SwitchToGreenLine();
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    SwitchToGreenLine();
+        //}
 
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            SwitchToPurpleLine();
-        }
+        //if(Input.GetKeyDown(KeyCode.A))
+        //{
+        //    SwitchToPurpleLine();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SwitchToRedLine();
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    SwitchToRedLine();
+        //}
     }
-
 
     public void MoveToTarget()
     {
@@ -77,7 +76,7 @@ public class FollowLine : MonoBehaviour
         playerTarget.position = currentLineArray[currentWaypointIndex].position;
     }
 
-    private void SwitchToGreenLine()
+    public void SwitchToGreenLine()
     {
         //If at junction waypoint
         if (currentWaypointIndex == 1)
@@ -87,7 +86,7 @@ public class FollowLine : MonoBehaviour
         }
     }
 
-    private void SwitchToPurpleLine()
+    public void SwitchToPurpleLine()
     {
         if (currentWaypointIndex == 1)
         {
@@ -95,7 +94,7 @@ public class FollowLine : MonoBehaviour
         }
     }
 
-    private void SwitchToRedLine()
+    public void SwitchToRedLine()
     {
         if (currentWaypointIndex == 1)
         {
