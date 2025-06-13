@@ -36,6 +36,7 @@ public class SpeedManager : MonoBehaviour
 
     public void MoveOnBeat()
     {
+        //Checking if gameobject beat checker is active at time of input
         if (beatChecker.activeSelf)
         {
             currentSpeed += accelerationSpeed * Time.deltaTime;
