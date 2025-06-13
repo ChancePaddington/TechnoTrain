@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class SpeedManager : MonoBehaviour
 {
-    [Range(0f, 20f)]
+    [SerializeField] private float maxSpeed = 100f;
+    [Range(0f, 50f)]
     [SerializeField] private float movementSpeed = 5f;
-    private float maxSpeed = 100f;
-    private float accelerationSpeed = 75f;
+    [Range(0f, 50f)]
+    [SerializeField] private float accelerationSpeed = 5f;
+    [Range(0f, 50f)]
+    [SerializeField] private float decelerationSpeed = 5f;
 
     public float currentSpeed;
 
@@ -37,6 +40,10 @@ public class SpeedManager : MonoBehaviour
         {
             currentSpeed += accelerationSpeed * Time.deltaTime;
 
+        }
+        else
+        {
+            currentSpeed -= decelerationSpeed * Time.deltaTime;
         }
     }
 
