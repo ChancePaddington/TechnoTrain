@@ -11,6 +11,7 @@ public class LinePoints : MonoBehaviour
 
     private void Start()
     {
+        //Component can set transform line points
         redLine.SetUpLine(redPoints);
         greenLine.SetUpLine(greenPoints);
         purpleLine.SetUpLine(purplePoints);

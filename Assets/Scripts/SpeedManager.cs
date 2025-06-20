@@ -24,16 +24,6 @@ public class SpeedManager : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed);  
     }
 
-    //private void OnEnable()
-    //{
-    //    InputManager.OnTap += MoveOnBeat;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    InputManager.OnTap -= MoveOnBeat;
-    //}
-
     public void MoveOnBeat()
     {
         //Checking if gameobject beat checker is active at time of input

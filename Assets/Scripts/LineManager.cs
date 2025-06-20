@@ -12,6 +12,7 @@ public class LineManager : MonoBehaviour
 
     public void SetUpLine(Transform[] points)
     {
+        //Sets component to connect with transfrom points
         lineRender.positionCount = points.Length;
         this.points = points;
     }
