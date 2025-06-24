@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Junction : MonoBehaviour
 {
     private SpeedManager speedManager;
 
-    [SerializeField] private float speedLimit;
+    [SerializeField] private int speedLimit;
+    //public Text speedLimitSign;
 
     private void Start()
     {
         speedManager = FindAnyObjectByType<SpeedManager>();
+        //speedLimitSign.text = "Threshold" + speedLimit;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

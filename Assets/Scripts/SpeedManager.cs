@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpeedManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SpeedManager : MonoBehaviour
     [SerializeField] private float decelerationSpeed = 5f;
 
     public float currentSpeed;
-
+    //public Image speedometer;
     public GameObject beatChecker;
 
     private void Start()
