@@ -1,54 +1,30 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class FollowLine : MonoBehaviour
 {
     private Rigidbody2D rb;
     public SpeedManager speedManager;
-
-    //Line waypoint variables
+    public ProceduralManager proceduralManager;
     public Transform playerTarget;
-    public Transform[] redWaypoints;
-    public Transform[] greenWaypoints;
-    public Transform[] purpleWaypoints;
-    public Transform[] currentLineArray;
-    private int currentWaypointIndex = 0;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
 
-        currentLineArray = redWaypoints;
+        proceduralManager.currentLineArray = proceduralManager.redWaypoints;
 
         //Set the position of the player target to the first waypoint
-        playerTarget.position = currentLineArray[0].position;
+        playerTarget.position = proceduralManager.currentLineArray[0].position;
 
-        Vector3 direction = currentLineArray[currentWaypointIndex].transform.position - transform.position;
+        Vector3 direction = proceduralManager.currentLineArray[proceduralManager.currentWaypointIndex].transform.position - transform.position;
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speedManager.currentSpeed;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
 
-    }
-
-    public void Update()
-    {
-        MoveToTarget();
-
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    SwitchToGreenLine();
-        //}
-
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    SwitchToPurpleLine();
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    SwitchToRedLine();
-        //}
     }
 
     public void MoveToTarget()
@@ -65,40 +41,40 @@ public class FollowLine : MonoBehaviour
         }
 
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
-        Vector3 direction = currentLineArray[currentWaypointIndex].transform.position - transform.position;
+        Vector3 direction = proceduralManager.currentLineArray[proceduralManager.currentWaypointIndex].transform.position - transform.position;
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speedManager.currentSpeed;
     }
 
     //Based on distance to target, switch to next waypoint when current waypoint is reached
     private void SwitchWaypointTarget()
     {
-        currentWaypointIndex = currentWaypointIndex + 1;
-        playerTarget.position = currentLineArray[currentWaypointIndex].position;
+        proceduralManager.currentWaypointIndex = proceduralManager.currentWaypointIndex + 1;
+        playerTarget.position = proceduralManager.currentLineArray[proceduralManager.currentWaypointIndex].position;
     }
 
     public void SwitchToGreenLine()
     {
         //If at junction waypoint
-        if (currentWaypointIndex == 1)
+        if (proceduralManager.currentWaypointIndex == 1)
         {
             //Changes current array variable to indicated array
-            currentLineArray = greenWaypoints;
+            proceduralManager.currentLineArray = proceduralManager.greenWaypoints;
         }
     }
 
     public void SwitchToPurpleLine()
     {
-        if (currentWaypointIndex == 1)
+        if (proceduralManager.currentWaypointIndex == 1)
         {
-            currentLineArray = purpleWaypoints;
+            proceduralManager.currentLineArray =   proceduralManager.purpleWaypoints;
         }
     }
 
     public void SwitchToRedLine()
     {
-        if (currentWaypointIndex == 1)
+        if (proceduralManager.currentWaypointIndex == 1)
         {
-            currentLineArray = redWaypoints;
+            proceduralManager.currentLineArray = proceduralManager.redWaypoints;
         }
     }
 }
