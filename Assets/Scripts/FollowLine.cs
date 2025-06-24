@@ -31,26 +31,6 @@ public class FollowLine : MonoBehaviour
 
     }
 
-    public void Update()
-    {
-        MoveToTarget();
-
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    SwitchToGreenLine();
-        //}
-
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    SwitchToPurpleLine();
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    SwitchToRedLine();
-        //}
-    }
-
     public void MoveToTarget()
     {
 

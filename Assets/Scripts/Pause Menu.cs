@@ -35,11 +35,11 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    //public void LoadMenu()
-    //{
-    //    Time.timeScale = 1f;
-    //    SceneController.LoadScene(9);
-    //}
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneController.LoadScene(1);
+    }
 
     public void QuitGame()
     {
