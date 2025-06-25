@@ -63,7 +63,7 @@ public class FollowLine : MonoBehaviour
     public void SwitchToGreenLine()
     {
         //If at junction waypoint
-        if (currentWaypointIndex == 1)
+        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
         {
             //Changes current array variable to indicated array
             currentLineArray = greenWaypoints;
@@ -72,7 +72,7 @@ public class FollowLine : MonoBehaviour
 
     public void SwitchToPurpleLine()
     {
-        if (currentWaypointIndex == 1)
+        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
         {
             currentLineArray = purpleWaypoints;
         }
@@ -80,7 +80,7 @@ public class FollowLine : MonoBehaviour
 
     public void SwitchToRedLine()
     {
-        if (currentWaypointIndex == 1)
+        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
         {
             currentLineArray = redWaypoints;
         }
