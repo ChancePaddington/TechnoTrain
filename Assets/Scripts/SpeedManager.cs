@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class SpeedManager : MonoBehaviour
     [Range(0f, 50f)]
     [SerializeField] private float decelerationSpeed = 5f;
 
+    public TextMeshProUGUI speedometer;
+
     public float currentSpeed;
     //public Image speedometer;
     public GameObject beatChecker;
@@ -18,6 +21,8 @@ public class SpeedManager : MonoBehaviour
     private void Start()
     {
         currentSpeed = movementSpeed;
+        //Update text component with the currentSpeed float value
+        speedometer.text = currentSpeed.ToString();
     }
 
     private void Update()

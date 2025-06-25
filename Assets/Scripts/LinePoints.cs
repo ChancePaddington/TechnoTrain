@@ -11,7 +11,7 @@ public class LinePoints : MonoBehaviour
 
     private void Start()
     {
-        //Component can set transform line points
+        //Component can set transform line points for camera rendering
         redLine.SetUpLine(redPoints);
         greenLine.SetUpLine(greenPoints);
         purpleLine.SetUpLine(purplePoints);

@@ -31,9 +31,13 @@ public class FollowLine : MonoBehaviour
 
     }
 
-    public void MoveToTarget()
+    private void Update()
     {
+        MoveToTarget();
+    }
 
+    private void MoveToTarget()
+    {
         //Calculating distance between Player and Player Target
         float distanceToTarget = Vector3.Distance(transform.position, playerTarget.position);
         //When distancetotarget is inferior to 0.5f , we are at target
