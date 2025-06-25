@@ -5,6 +5,12 @@ public class UIController : MonoBehaviour
     public SpeedManager speedManager;
     public FollowLine followLine;
 
+    private void Start()
+    {
+        followLine = FindAnyObjectByType<FollowLine>();
+        speedManager = FindAnyObjectByType<SpeedManager>();
+    }
+
     public void BeatButton()
     {
         speedManager.MoveOnBeat();
