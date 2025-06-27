@@ -30,15 +30,10 @@ public class Junction : MonoBehaviour
             if (playerSpeed < speedLimit)
             {
                 Debug.Log("Collidercollidin");
-                //collision.gameObject.SetActive(false);
-                collision.gameObject.transform.position = reset.transform.position;
+                collision.gameObject.SetActive(false);
+                //collision.gameObject.transform.position = reset.transform.position;
             }
         }
     }
-
-    //public void Teleport()
-    //{
-    //    gameObject.transform.position = destination.transform.position;
-    //}
 
 }

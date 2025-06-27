@@ -20,12 +20,12 @@ public class SpeedManager : MonoBehaviour
     {
         currentSpeed = movementSpeed;
         //Update text component with the currentSpeed float value
-        speedometer.text = currentSpeed + "Mph";
     }
 
     private void Update()
     {
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);  
+        speedometer.text = currentSpeed + "Mph";
     }
 
     public void MoveOnBeat()
@@ -33,7 +33,7 @@ public class SpeedManager : MonoBehaviour
         //Checking if gameobject beat checker is active at time of input
         if (beatChecker.activeSelf)
         {
-            currentSpeed += accelerationSpeed * Time.deltaTime;
+            currentSpeed += accelerationSpeed;
 
         }
         else
