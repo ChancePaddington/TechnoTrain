@@ -8,9 +8,11 @@ public class SpeedManager : MonoBehaviour
     [Range(0f, 50f)]
     [SerializeField] private int movementSpeed = 4;
     [Range(0f, 50f)]
-    [SerializeField] private int accelerationSpeed = 2;
+    [SerializeField] private int accelerationSpeed = 1;
     [Range(0f, 50f)]
-    [SerializeField] private int decelerationSpeed = 2;
+    [SerializeField] private int decelerationSpeed = 1;
+
+    //Train goes off camera when too fast, speed modifier?
 
     public TextMeshProUGUI speedometer;
     public float currentSpeed;
@@ -38,7 +40,7 @@ public class SpeedManager : MonoBehaviour
         }
         else
         {
-            currentSpeed -= decelerationSpeed * Time.deltaTime;
+            currentSpeed -= decelerationSpeed;
         }
     }
 

@@ -4147,7 +4147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &955265114
 Transform:
   m_ObjectHideFlags: 0
@@ -5467,9 +5467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 100
-  movementSpeed: 4
-  accelerationSpeed: 2
-  decelerationSpeed: 2
+  movementSpeed: 1
+  accelerationSpeed: 1
+  decelerationSpeed: 1
   speedometer: {fileID: 773486456}
   currentSpeed: 0
   beatChecker: {fileID: 2077675361}
@@ -5789,7 +5789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &1377028131
 PlayableDirector:
   m_ObjectHideFlags: 0
