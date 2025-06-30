@@ -57,6 +57,13 @@ public class FollowLine : MonoBehaviour
     private void SwitchWaypointTarget()
     {
         currentWaypointIndex = currentWaypointIndex + 1;
+
+        bool indexIsOutOfRange = currentWaypointIndex == currentLineArray.Length;
+        if(indexIsOutOfRange)
+        {
+            currentWaypointIndex = 0;
+        }
+
         playerTarget.position = currentLineArray[currentWaypointIndex].position;
     }
 
