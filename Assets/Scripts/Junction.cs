@@ -10,11 +10,12 @@ public class Junction : MonoBehaviour
     [SerializeField] private int speedLimit;
     public TextMeshProUGUI speedLimitSign;
 
-    public GameObject currentTeleporter;
+    public ParticleSystem ps;
 
     private void Start()
     {
         speedManager = FindAnyObjectByType<SpeedManager>();
+        ps = GetComponentInChildren<ParticleSystem>();
         speedLimitSign.text = speedLimit + "Mph";
     }
 
@@ -31,7 +32,11 @@ public class Junction : MonoBehaviour
             {
                 Debug.Log("Collidercollidin");
                 collision.gameObject.SetActive(false);
-                //collision.gameObject.transform.position = reset.transform.position;
+            }
+            else
+            {
+                Debug.Log("Play Particles");
+                ps.Play();
             }
         }
     }

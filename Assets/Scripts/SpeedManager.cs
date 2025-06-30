@@ -40,8 +40,13 @@ public class SpeedManager : MonoBehaviour
         }
         else
         {
-            currentSpeed -= decelerationSpeed;
+            Deceleration();
         }
+    }
+
+    public void Deceleration()
+    {
+        currentSpeed -= decelerationSpeed;
     }
 
 }
