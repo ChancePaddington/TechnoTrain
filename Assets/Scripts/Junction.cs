@@ -15,7 +15,12 @@ public class Junction : MonoBehaviour
     {
         speedManager = FindAnyObjectByType<SpeedManager>();
         ps = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void Update()
+    {
         speedLimitSign.text = speedLimit + "Mph";
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

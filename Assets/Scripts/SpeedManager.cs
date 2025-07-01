@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SpeedManager : MonoBehaviour
 {
-    [SerializeField] public int maxSpeed = 25;
+    [SerializeField] public int maxSpeed = 50;
     [Range(0f, 50f)]
     [SerializeField] private int movementSpeed = 4;
     [Range(0f, 50f)]
