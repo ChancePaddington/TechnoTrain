@@ -30,4 +30,19 @@ public class UIController : MonoBehaviour
     {
         followLine.SwitchToRedLine();
     }
+
+    public void SceneLoad(int sceneIndex)
+    {
+        SceneController.LoadScene(sceneIndex);
+    }
+
+    public void Restart()
+    {
+        SceneController.Restart();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
