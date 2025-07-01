@@ -7,9 +7,9 @@ public class LapChange : MonoBehaviour
 {
     private List<Junction> junctions;
     public SpeedManager speedManager;
-    private int lapSpeedLimit = 5;
-    private int lapMaxSpeed = 5;
-    private int lapDeceleration = 2;
+    [SerializeField] private int lapSpeedLimit = 5;
+    [SerializeField] private int lapMaxSpeed = 5;
+    [SerializeField] private int lapDeceleration = 2;
 
     private void Start()
     {
