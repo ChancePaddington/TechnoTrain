@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
+
 
 public class FollowLine : MonoBehaviour
 {
+   
     private Rigidbody2D rb;
     public SpeedManager speedManager;
 
@@ -11,6 +14,7 @@ public class FollowLine : MonoBehaviour
     public Transform[] greenWaypoints;
     public Transform[] purpleWaypoints;
     public Transform[] currentLineArray;
+    public LineColourEnum.LineColour lineColour;
     private int currentWaypointIndex = 0;
 
     private void Start()
@@ -19,6 +23,7 @@ public class FollowLine : MonoBehaviour
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
 
         currentLineArray = redWaypoints;
+        lineColour = LineColourEnum.LineColour.red;
 
         //Set the position of the player target to the first waypoint
         playerTarget.position = currentLineArray[0].position;
@@ -70,26 +75,29 @@ public class FollowLine : MonoBehaviour
     public void SwitchToGreenLine()
     {
         //If at junction waypoint
-        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
+        if (currentLineArray[currentWaypointIndex].CompareTag("Junction"))
         {
             //Changes current array variable to indicated array
             currentLineArray = greenWaypoints;
+            lineColour = LineColourEnum.LineColour.green;
         }
     }
 
     public void SwitchToPurpleLine()
     {
-        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
+        if (currentLineArray[currentWaypointIndex].CompareTag("Junction"))
         {
             currentLineArray = purpleWaypoints;
+            lineColour = LineColourEnum.LineColour.purple;
         }
     }
 
     public void SwitchToRedLine()
     {
-        if (currentWaypointIndex is 1 or 3 or 6 or 8 or 9)
+        if (currentLineArray[currentWaypointIndex].CompareTag("Junction"))
         {
             currentLineArray = redWaypoints;
+            lineColour = LineColourEnum.LineColour.red;
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7944717153064374988}
   m_Layer: 0
   m_Name: Junction (1)
-  m_TagString: Teleporter
+  m_TagString: Junction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: {fileID: 0}
-  speedLimit: 2
+  speedLimit: 5
   speedLimitSign: {fileID: 0}
   ps: {fileID: 577583180648922747}
 --- !u!1001 &18156828683783983
@@ -180,6 +180,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 595457417033052500, guid: 1100cc1b70d8dad4ca95f43b37c401d5, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595457417033052500, guid: 1100cc1b70d8dad4ca95f43b37c401d5, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 595457417033052500, guid: 1100cc1b70d8dad4ca95f43b37c401d5, type: 3}

@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class SpeedManager : MonoBehaviour
 {
-    [SerializeField] private int maxSpeed = 100;
+    [SerializeField] public int maxSpeed = 25;
     [Range(0f, 50f)]
     [SerializeField] private int movementSpeed = 4;
     [Range(0f, 50f)]
     [SerializeField] private int accelerationSpeed = 1;
     [Range(0f, 50f)]
-    [SerializeField] private int decelerationSpeed = 1;
+    [SerializeField] public int decelerationSpeed = 5;
 
     //Train goes off camera when too fast, speed modifier?
 

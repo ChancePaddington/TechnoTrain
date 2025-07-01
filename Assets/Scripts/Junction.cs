@@ -1,13 +1,12 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Junction : MonoBehaviour
 {
     private SpeedManager speedManager;
     [SerializeField] private Transform reset;
 
-    [SerializeField] private int speedLimit;
+    [SerializeField] public int speedLimit;
     public TextMeshProUGUI speedLimitSign;
 
     public ParticleSystem ps;
