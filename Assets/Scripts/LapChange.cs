@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
 
 public class LapChange : MonoBehaviour
@@ -11,9 +12,18 @@ public class LapChange : MonoBehaviour
     [SerializeField] private int lapMaxSpeed = 5;
     [SerializeField] private int lapDeceleration = 2;
 
+    [SerializeField] public int lapNumber = 1;
+    private int lapIncrease = 1;
+    public TextMeshProUGUI lapNumberSign;
+
     private void Start()
     {
         junctions = FindObjectsByType<Junction>(FindObjectsSortMode.None).ToList();
+    }
+
+    private void Update()
+    {
+        lapNumberSign.text = "Lap: " + lapNumber;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,6 +35,7 @@ public class LapChange : MonoBehaviour
             {
                 junction.speedLimit += lapSpeedLimit;
             }
+            lapNumber += lapIncrease;
             speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
             speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
         }
