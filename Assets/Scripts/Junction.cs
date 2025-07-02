@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -17,6 +18,9 @@ public class Junction : MonoBehaviour
     [SerializeField] AudioClip junctionSound;
     [Range(1, 10)]
     [SerializeField] float volume = 1f;
+
+    public int gameOver;
+    private float transitionSpeed = 2f;
 
     private void Start()
     {
@@ -42,6 +46,7 @@ public class Junction : MonoBehaviour
             if (playerSpeed < speedLimit)
             {
                 collision.gameObject.SetActive(false);
+                StartCoroutine(TransitionToGameOverScene());
             }
             else
             {
@@ -49,6 +54,12 @@ public class Junction : MonoBehaviour
                 ps.Play();
                 SoundManager.instance.PlaySoundFXClip(junctionSound, transform, volume);
             }
+        }
+
+        IEnumerator TransitionToGameOverScene()
+        {
+            yield return new WaitForSeconds(transitionSpeed);
+            SceneController.LoadScene(gameOver);
         }
     }
 

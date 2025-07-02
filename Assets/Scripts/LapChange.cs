@@ -15,7 +15,7 @@ public class LapChange : MonoBehaviour
     [SerializeField] public int lapNumber = 1;
     private int lapIncrease = 1;
     public TextMeshProUGUI lapNumberSign;
-    public string currentLapScore;
+    public int currentLapScore;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -29,12 +29,13 @@ public class LapChange : MonoBehaviour
     {
         junctions = FindObjectsByType<Junction>(FindObjectsSortMode.None).ToList();
         ps = GetComponentInChildren<ParticleSystem>();
+        currentLapScore = lapNumber;
         
     }
 
     private void Update()
     {
-        lapNumberSign.text = "Lap: " + lapNumber;
+        lapNumberSign.text = "Lap: " + currentLapScore;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +47,7 @@ public class LapChange : MonoBehaviour
             {
                 junction.speedLimit += lapSpeedLimit;
             }
-            lapNumber += lapIncrease;
+            currentLapScore += lapIncrease;
             speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
             speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
             ps.Play();

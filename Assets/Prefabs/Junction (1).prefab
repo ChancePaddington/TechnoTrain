@@ -172,6 +172,7 @@ MonoBehaviour:
   ps: {fileID: 577583180648922747}
   junctionSound: {fileID: 8300000, guid: 82c7617364236754bb3d3b4230a501fe, type: 3}
   volume: 1
+  gameOver: 4
 --- !u!1001 &18156828683783983
 PrefabInstance:
   m_ObjectHideFlags: 0
