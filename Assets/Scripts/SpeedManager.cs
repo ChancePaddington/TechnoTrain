@@ -23,7 +23,6 @@ public class SpeedManager : MonoBehaviour
     public TextMeshProUGUI speedometer;
     public float currentSpeed;
     public GameObject beatChecker;
-    public int gameOver;
 
     private void Start()
     {
@@ -54,18 +53,6 @@ public class SpeedManager : MonoBehaviour
     public void Deceleration()
     {
         currentSpeed -= decelerationSpeed;
-    }
-
-    private void OnDisable()
-    {
-        soundLoopManager.Stop();
-        TransitionToGameOverScene();
-    }
-
-    public void TransitionToGameOverScene()
-    {
-        SceneController.LoadScene(gameOver);
-
     }
 
 }
