@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedManager: {fileID: 0}
+  decelerationSound: {fileID: 8300000, guid: e82e064335378ec4386549d2d2954e4c, type: 3}
+  volume: 1
 --- !u!61 &8191339245402987158
 BoxCollider2D:
   m_ObjectHideFlags: 0

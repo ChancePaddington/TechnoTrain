@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Junction : MonoBehaviour
 {
@@ -9,7 +10,13 @@ public class Junction : MonoBehaviour
     [SerializeField] public int speedLimit;
     public TextMeshProUGUI speedLimitSign;
 
+    //Particle Effects
     public ParticleSystem ps;
+
+    //Audio
+    [SerializeField] AudioClip junctionSound;
+    [Range(1, 10)]
+    [SerializeField] float volume = 1f;
 
     private void Start()
     {
@@ -34,13 +41,13 @@ public class Junction : MonoBehaviour
             //If less than set speed limit
             if (playerSpeed < speedLimit)
             {
-                Debug.Log("Collidercollidin");
                 collision.gameObject.SetActive(false);
             }
             else
             {
                 Debug.Log("Play Particles");
                 ps.Play();
+                SoundManager.instance.PlaySoundFXClip(junctionSound, transform, volume);
             }
         }
     }
