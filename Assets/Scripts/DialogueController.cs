@@ -8,11 +8,14 @@ public class DialogueController : MonoBehaviour
     public string[] sentences;
     private int dialogueIndex = 0;
     public float dialogueSpeed;
+    public Animator dialogueAnimator;
+    private bool startDialogue;
 
     public int trackScene;
 
     private void Start()
     {
+        dialogueAnimator.SetTrigger("Enter");
         NextSentence();
     }
 
@@ -35,6 +38,8 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
+            dialogueText.text = "";
+            dialogueAnimator.SetTrigger("Exit");
             TransitionNextScene();
         }
     }

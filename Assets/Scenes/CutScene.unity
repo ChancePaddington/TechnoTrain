@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 525124521}
   - component: {fileID: 525124523}
   - component: {fileID: 525124522}
+  - component: {fileID: 525124524}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -282,7 +283,7 @@ RectTransform:
   m_GameObject: {fileID: 525124520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.493126, y: 1.9193, z: 1.9193}
+  m_LocalScale: {x: 4.6632795, y: 3.284, z: 3.284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2074500475}
@@ -290,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186, y: -146}
+  m_AnchoredPosition: {x: -143, y: -81}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525124522
@@ -331,6 +332,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525124520}
   m_CullTransparentMesh: 1
+--- !u!95 &525124524
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525124520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd9fbf4df890eb74395beb8553098580, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &728745176
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,8 +746,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 525124521}
   - {fileID: 935761067}
+  - {fileID: 525124521}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -747,7 +770,7 @@ MonoBehaviour:
   speedManager: {fileID: 0}
   followLine: {fileID: 0}
   dialogueController: {fileID: 0}
-  dialogueNextSound: {fileID: 0}
+  dialogueNextSound: {fileID: 8300000, guid: c5818924c5098e1448c8eb06b290927b, type: 3}
   volume: 1
 --- !u!1 &1126765930
 GameObject:
@@ -886,6 +909,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1210805050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210805052}
+  - component: {fileID: 1210805051}
+  m_Layer: 0
+  m_Name: Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1210805051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210805050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa16ed36590bfa44ebd18715e3dc63d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFXObject: {fileID: 7517388839795731307, guid: 86c9a175e371a25408e3cca8b71a60d1, type: 3}
+  soundLoopFXObject: {fileID: 8407226249759598315, guid: b1e329b490408344687c83181297a16a, type: 3}
+--- !u!4 &1210805052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210805050}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 742.2513, y: 434.27573, z: -2.755703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395362490
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,9 +988,10 @@ MonoBehaviour:
   sentences:
   - Techno Train.
   - All aboard.
-  - Choochoochoochoochoo
+  - Choochoochoochoochoohoochoochoochoochoochoochoochoochoochoo
   - Choo...
   dialogueSpeed: 0.05
+  dialogueAnimator: {fileID: 525124524}
   trackScene: 1
 --- !u!4 &1395362492
 Transform:
@@ -1488,6 +1558,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1126765934}
   - {fileID: 2016805556}
+  - {fileID: 1210805052}
   - {fileID: 2082308064}
   - {fileID: 981891947}
   - {fileID: 1395362492}
