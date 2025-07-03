@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: {fileID: 0}
-  speedLimit: 0
+  speedLimit: 50
   speedLimitSign: {fileID: 0}
+  hud: {fileID: 0}
+  endScreen: {fileID: 0}
   ps: {fileID: 577583180648922747}
   junctionSound: {fileID: 8300000, guid: 82c7617364236754bb3d3b4230a501fe, type: 3}
   volume: 1

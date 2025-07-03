@@ -9,8 +9,8 @@ public class LapChange : MonoBehaviour
     private List<Junction> junctions;
     public SpeedManager speedManager;
     [SerializeField] private int lapSpeedLimit = 5;
-    [SerializeField] private int lapMaxSpeed = 5;
-    [SerializeField] private int lapDeceleration = 2;
+    //[SerializeField] private int lapMaxSpeed = 5;
+    //[SerializeField] private int lapDeceleration = 2;
 
     [SerializeField] public int lapNumber = 1;
     private int lapIncrease = 1;
@@ -18,7 +18,7 @@ public class LapChange : MonoBehaviour
     public TextMeshProUGUI endLapScore;
     public int currentLapScore;
 
-    public GameObject brokenTracks;
+    //public GameObject brokenTracks;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -49,13 +49,13 @@ public class LapChange : MonoBehaviour
             // Iterates across a list of Junctions 
             foreach (Junction junction in junctions)
             {
-                junction.speedLimit += lapSpeedLimit;
+                junction.speedLimit -= lapSpeedLimit;
             }
             currentLapScore += lapIncrease;
             //ScoreManager.Instance.AddScore(1);
-            speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
-            speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
-            brokenTracks.SetActive(true);
+            //speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
+            //speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
+            //brokenTracks.SetActive(true);
             ps.Play();
             Debug.Log("Play Particles");
             SoundManager.instance.PlaySoundFXClip(lapSound, transform, volume);

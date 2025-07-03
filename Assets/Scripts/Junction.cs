@@ -46,7 +46,7 @@ public class Junction : MonoBehaviour
             float playerSpeed = speedManager.currentSpeed;
 
             //If less than set speed limit
-            if (playerSpeed < speedLimit)
+            if (playerSpeed > speedLimit)
             {
                 collision.gameObject.SetActive(false);
                 //StartCoroutine(TransitionToGameOverScene());
