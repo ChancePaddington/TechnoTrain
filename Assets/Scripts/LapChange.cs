@@ -15,7 +15,10 @@ public class LapChange : MonoBehaviour
     [SerializeField] public int lapNumber = 1;
     private int lapIncrease = 1;
     public TextMeshProUGUI lapNumberSign;
+    public TextMeshProUGUI endLapScore;
     public int currentLapScore;
+
+    public GameObject brokenTracks;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -36,6 +39,7 @@ public class LapChange : MonoBehaviour
     private void Update()
     {
         lapNumberSign.text = "Lap: " + currentLapScore;
+        endLapScore.text = "Laps Lasted: " + currentLapScore;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +55,7 @@ public class LapChange : MonoBehaviour
             //ScoreManager.Instance.AddScore(1);
             speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
             speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
+            brokenTracks.SetActive(true);
             ps.Play();
             Debug.Log("Play Particles");
             SoundManager.instance.PlaySoundFXClip(lapSound, transform, volume);

@@ -8,8 +8,11 @@ public class Junction : MonoBehaviour
     private SpeedManager speedManager;
     [SerializeField] private Transform reset;
 
+    //UI
     [SerializeField] public int speedLimit;
     public TextMeshProUGUI speedLimitSign;
+    public GameObject hud;
+    public GameObject endScreen;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -46,7 +49,9 @@ public class Junction : MonoBehaviour
             if (playerSpeed < speedLimit)
             {
                 collision.gameObject.SetActive(false);
-                StartCoroutine(TransitionToGameOverScene());
+                //StartCoroutine(TransitionToGameOverScene());
+                endScreen.SetActive(true);
+                hud.SetActive(false);
             }
             else
             {
@@ -56,11 +61,11 @@ public class Junction : MonoBehaviour
             }
         }
 
-        IEnumerator TransitionToGameOverScene()
-        {
-            yield return new WaitForSeconds(transitionSpeed);
-            SceneController.LoadScene(gameOver);
-        }
+        //IEnumerator TransitionToGameOverScene()
+        //{
+        //    yield return new WaitForSeconds(transitionSpeed);
+        //    SceneController.LoadScene(gameOver);
+        //}
     }
 
 }

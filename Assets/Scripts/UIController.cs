@@ -1,11 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class UIController : MonoBehaviour
 {
     public SpeedManager speedManager;
     public FollowLine followLine;
     public DialogueController dialogueController;
+
+    public Animator transition;
+    public float transitionTime;
 
     //Audio
     [SerializeField] AudioClip dialogueNextSound; 
@@ -48,7 +53,14 @@ public class UIController : MonoBehaviour
 
     public void SceneLoad(int sceneIndex)
     {
-        SceneController.LoadScene(sceneIndex);
+        StartCoroutine(LoadLevel(sceneIndex));
+    }
+
+    IEnumerator LoadLevel(int sceneIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void Restart()

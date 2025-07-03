@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BrokenTrack : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class BrokenTrack : MonoBehaviour
     [UnityEngine.Range(1, 10)]
     [SerializeField] float volume = 1f;
 
-    public int gameOver;
-    private float transitionSpeed = 2f;
+    public GameObject endScreen;
+    public GameObject hud;
+
+    //public int gameOver;
+    //private float transitionSpeed = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,13 +25,15 @@ public class BrokenTrack : MonoBehaviour
             {
                 collision.gameObject.SetActive(false);
                 SoundManager.instance.PlaySoundFXClip(destroySound, transform, volume);
-                StartCoroutine(TransitionToGameOverScene());
+                endScreen.SetActive(true);
+                hud.SetActive(false);
+                //StartCoroutine(TransitionToGameOverScene());
             }
         }
     }
-    IEnumerator TransitionToGameOverScene()
-    {
-        yield return new WaitForSeconds(transitionSpeed);
-        SceneController.LoadScene(gameOver);
-    }
+    //IEnumerator TransitionToGameOverScene()
+    //{
+    //    yield return new WaitForSeconds(transitionSpeed);
+    //    SceneController.LoadScene(gameOver);
+    //}
 }
