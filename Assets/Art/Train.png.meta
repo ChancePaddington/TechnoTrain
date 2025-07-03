@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: c3b65edc3a2da814a95d58cbb39e1b93
+guid: f3088109b1469a541871277d76fb0c75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6723412688812716217
-    second: Start run_0
+      213: -4368322862165430076
+    second: Train_0
+  - first:
+      213: 4412884915314477616
+    second: Train_1
+  - first:
+      213: -5587011221167700457
+    second: Train_2
+  - first:
+      213: -7442382721495101666
+    second: Train_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start run_0
+      name: Train_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 231
-        width: 919
-        height: 582
+        x: 1086
+        y: 168
+        width: 323
+        height: 754
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b03903e73c5e4d50800000000000000
-      internalID: 6723412688812716217
+      spriteID: 4c0796050899063c0800000000000000
+      internalID: -4368322862165430076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Train_1
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 671
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03acff33377bd3d30800000000000000
+      internalID: 4412884915314477616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Train_2
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 541
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7168d2645e2f672b0800000000000000
+      internalID: -5587011221167700457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Train_3
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 406
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f87c2a85857b890800000000000000
+      internalID: -7442382721495101666
       vertices: []
       indices: 
       edges: []
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Start run_0: 6723412688812716217
+      Train_0: -4368322862165430076
+      Train_1: 4412884915314477616
+      Train_2: -5587011221167700457
+      Train_3: -7442382721495101666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

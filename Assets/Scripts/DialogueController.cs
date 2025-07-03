@@ -13,6 +13,12 @@ public class DialogueController : MonoBehaviour
 
     public int trackScene;
 
+    //Audio
+    [SerializeField] AudioClip dialogueRadioPickUp;
+    [SerializeField] AudioClip dialogueRadioPutDown;
+    [Range(1, 10)]
+    [SerializeField] float volume = 1f;
+
     private void Start()
     {
         dialogueAnimator.SetTrigger("Enter");
@@ -24,6 +30,7 @@ public class DialogueController : MonoBehaviour
         foreach (char Character in sentences[dialogueIndex].ToCharArray())
         {
             dialogueText.text += Character;
+            SoundManager.instance.PlaySoundFXClip(dialogueRadioPickUp, transform, volume);
             yield return new WaitForSeconds(dialogueSpeed);
         }
         dialogueIndex++;
@@ -38,6 +45,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.PlaySoundFXClip(dialogueRadioPutDown, transform, volume);
             dialogueText.text = "";
             dialogueAnimator.SetTrigger("Exit");
             TransitionNextScene();
