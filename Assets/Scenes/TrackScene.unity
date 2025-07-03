@@ -1277,8 +1277,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -2022,8 +2026,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -2498,7 +2506,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -7.47, y: 4.88, z: 0}
+  - {x: -27.39, y: 14.48, z: 0}
   - {x: -3.37, y: 1.24, z: 0.011069745}
   - {x: 12.48, y: -4.91, z: 0}
   - {x: 21.627394, y: 6.6113915, z: 0.011069745}
@@ -2515,7 +2523,7 @@ LineRenderer:
   - {x: 62.5, y: -70.7, z: 0}
   - {x: -22.91864, y: -42.303635, z: 0.011069745}
   - {x: -30.2, y: -10.4, z: 0}
-  - {x: -7.47, y: 4.88, z: 0}
+  - {x: -27.39, y: 14.48, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -3008,8 +3016,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -3282,7 +3294,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 13
+  orthographic size: 28.09
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3468,7 +3480,7 @@ MonoBehaviour:
   Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 1
-    Time: 0.5
+    Time: 0.7
     Smoothing: 0
     IgnoreY: 0
 --- !u!4 &527144198 stripped
@@ -4467,7 +4479,7 @@ Transform:
   m_GameObject: {fileID: 696831639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.8, y: -35.2, z: 0}
+  m_LocalPosition: {x: 121.8, y: -29.44, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5049,6 +5061,7 @@ GameObject:
   - component: {fileID: 773486453}
   - component: {fileID: 773486455}
   - component: {fileID: 773486456}
+  - component: {fileID: 773486457}
   m_Layer: 5
   m_Name: Speedometer UI
   m_TagString: Untagged
@@ -5174,6 +5187,28 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &773486457
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773486452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd845d3174b463f4fa62f96e2c9f13d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &787206310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4691545123158956451, guid: 8dccc07cf662ad9458e23102349d2dfe, type: 3}
@@ -5381,7 +5416,7 @@ Transform:
   m_GameObject: {fileID: 824239879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.47, y: 4.88, z: 0}
+  m_LocalPosition: {x: -27.39, y: 14.48, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5519,7 +5554,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -5.17, y: -7.94, z: 0}
+  - {x: -1.92, y: -26.56, z: 0}
   - {x: -3.37, y: 1.24, z: 0.011069745}
   - {x: 11.64, y: 4.48, z: 0}
   - {x: 21.64, y: 6.58, z: 0.011069745}
@@ -5529,14 +5564,14 @@ LineRenderer:
   - {x: 77.32, y: 41.38, z: 0}
   - {x: 96.76, y: 41.55, z: 0.011069745}
   - {x: 132.27, y: 25.82, z: 0.011069745}
-  - {x: 132.3, y: -18.8, z: 0}
+  - {x: 137.62, y: -7.45, z: 0}
   - {x: 164.50267, y: -30.715235, z: 0.011069745}
-  - {x: 125.1, y: -51.7, z: 0}
+  - {x: 133.69, y: -49.3, z: 0}
   - {x: 87.43747, y: -51.309284, z: 0.011069745}
   - {x: 56, y: -39.5, z: 0}
   - {x: -22.91864, y: -42.303635, z: 0.011069745}
   - {x: -5.96, y: -28.88, z: 0}
-  - {x: -5.17, y: -7.94, z: 0}
+  - {x: -1.92, y: -26.56, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -6332,7 +6367,7 @@ Transform:
   m_GameObject: {fileID: 974476712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125.1, y: -51.7, z: 0}
+  m_LocalPosition: {x: 133.69, y: -49.3, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6623,7 +6658,7 @@ Transform:
   m_GameObject: {fileID: 1037651487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.17, y: -7.94, z: 0}
+  m_LocalPosition: {x: -1.92, y: -26.56, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6946,8 +6981,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -7502,8 +7541,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -7528,7 +7571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1172208457
 Transform:
   m_ObjectHideFlags: 0
@@ -7920,7 +7963,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedManager: {fileID: 1284775104}
-  lineRenderer: {fileID: 0}
   playerTarget: {fileID: 1301308100}
   redWaypoints:
   - {fileID: 1602535329}
@@ -7990,12 +8032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953b52616d609034295998b18510d26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 25
-  movementSpeed: 1
-  accelerationSpeed: 1
-  decelerationSpeed: 3
+  maxSpeed: 55
+  movementSpeed: 5
+  accelerationSpeed: 5
+  decelerationSpeed: 6
   soundLoopManager: {fileID: 0}
   railSound: {fileID: 8300000, guid: c95cf2ae8c24119448ccb807bd2497ba, type: 3}
+  decelerationSound: {fileID: 8300000, guid: e82e064335378ec4386549d2d2954e4c, type: 3}
   volume: 1
   speedometer: {fileID: 773486456}
   currentSpeed: 0
@@ -8311,7 +8354,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 323, y: -82, z: -0.0000000074506}
-  m_LocalScale: {x: 54.086132, y: 86.44317, z: 16.580784}
+  m_LocalScale: {x: 117.95645, y: 188.52391, z: 36.161034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1924399865}
@@ -9185,7 +9228,7 @@ Transform:
   m_GameObject: {fileID: 1559999666}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 132.3, y: -18.8, z: 0}
+  m_LocalPosition: {x: 137.62, y: -7.45, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9308,7 +9351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Speed
+  m_text: Brake
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9538,7 +9581,7 @@ GameObject:
   - component: {fileID: 1595015140}
   - component: {fileID: 1595015139}
   m_Layer: 5
-  m_Name: Speed Button
+  m_Name: Brake Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9610,7 +9653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1404759125}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: BeatButton
+        m_MethodName: BrakeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9684,7 +9727,7 @@ Transform:
   m_GameObject: {fileID: 1602535328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.64, y: -3.57, z: 0}
+  m_LocalPosition: {x: -14.1, y: -14.57, z: 0}
   m_LocalScale: {x: 2.4142, y: 2.4142, z: 2.4142}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10597,14 +10640,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedManager: {fileID: 1284775104}
-  lapSpeedLimit: 5
-  lapMaxSpeed: 5
-  lapDeceleration: 2
+  lapSpeedLimit: 10
   lapNumber: 1
   lapNumberSign: {fileID: 1987551429}
   endLapScore: {fileID: 647506208}
   currentLapScore: 0
-  brokenTracks: {fileID: 1605106076}
   ps: {fileID: 1897774050}
   lapSound: {fileID: 8300000, guid: f22c7208782739c478d0ce97dfdd5350, type: 3}
   volume: 1
@@ -11192,7 +11232,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -8.64, y: -3.57, z: 0}
+  - {x: -14.1, y: -14.57, z: 0}
   - {x: -3.37, y: 1.24, z: 0.011069745}
   - {x: 9.43, y: -0.73, z: 0}
   - {x: 21.64, y: 6.58, z: 0.011069745}
@@ -11204,12 +11244,12 @@ LineRenderer:
   - {x: 132.27, y: 25.82, z: 0.011069745}
   - {x: 189.2, y: 10.1, z: 0}
   - {x: 164.50267, y: -30.715235, z: 0.011069745}
-  - {x: 113.8, y: -35.2, z: 0}
+  - {x: 121.8, y: -29.44, z: 0}
   - {x: 87.43747, y: -51.309284, z: 0.011069745}
   - {x: 87.2, y: -89.2, z: 0}
   - {x: -22.91864, y: -42.303635, z: 0.011069745}
   - {x: -17.46, y: -21.68, z: 0}
-  - {x: -8.64, y: -3.57, z: 0}
+  - {x: -14.1, y: -14.57, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -12356,8 +12396,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -12667,8 +12711,12 @@ PrefabInstance:
       objectReference: {fileID: 2067775813}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimit
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -12693,7 +12741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077675362
 Transform:
   m_ObjectHideFlags: 0
@@ -12847,10 +12895,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Junction (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 460846402885094146, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5040246721162761506, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.37
@@ -12903,6 +12947,14 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 2067775813}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
+      propertyPath: speedWarning
+      value: 
+      objectReference: {fileID: 773486457}
     - target: {fileID: 7944717153064374988, guid: 0cef3e6f4f9d658478224bb8767de3fd, type: 3}
       propertyPath: speedLimitSign
       value: 
@@ -12984,12 +13036,12 @@ SceneRoots:
   - {fileID: 1656142760}
   - {fileID: 1739264530}
   - {fileID: 1627862964}
-  - {fileID: 1172208457}
   - {fileID: 1605106077}
   - {fileID: 1887885931}
   - {fileID: 800521634}
   - {fileID: 315563862}
+  - {fileID: 2067775817}
+  - {fileID: 1172208457}
   - {fileID: 2077675362}
   - {fileID: 955265114}
   - {fileID: 1377028132}
-  - {fileID: 2067775817}

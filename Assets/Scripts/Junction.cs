@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Rendering;
 
 public class Junction : MonoBehaviour
@@ -22,6 +23,9 @@ public class Junction : MonoBehaviour
     [Range(1, 10)]
     [SerializeField] float volume = 1f;
 
+    //Animations
+    public Animator speedWarning;
+
     public int gameOver;
     private float transitionSpeed = 2f;
 
@@ -33,7 +37,17 @@ public class Junction : MonoBehaviour
 
     private void Update()
     {
-        speedLimitSign.text = speedLimit + "Mph";
+        speedLimitSign.text = speedLimit * 10 + "Mph";
+
+        float playerSpeed = speedManager.currentSpeed;  
+        if (playerSpeed > speedLimit)
+        {
+            speedWarning.SetBool("speedBool", true);
+        }
+        else
+        {
+            speedWarning.SetBool("speedBool", false); 
+        }
         
     }
 
@@ -49,7 +63,6 @@ public class Junction : MonoBehaviour
             if (playerSpeed > speedLimit)
             {
                 collision.gameObject.SetActive(false);
-                //StartCoroutine(TransitionToGameOverScene());
                 endScreen.SetActive(true);
                 hud.SetActive(false);
             }
@@ -60,12 +73,6 @@ public class Junction : MonoBehaviour
                 SoundManager.instance.PlaySoundFXClip(junctionSound, transform, volume);
             }
         }
-
-        //IEnumerator TransitionToGameOverScene()
-        //{
-        //    yield return new WaitForSeconds(transitionSpeed);
-        //    SceneController.LoadScene(gameOver);
-        //}
     }
 
 }

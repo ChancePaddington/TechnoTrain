@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
 
 public class LapChange : MonoBehaviour
@@ -18,7 +19,8 @@ public class LapChange : MonoBehaviour
     public TextMeshProUGUI endLapScore;
     public int currentLapScore;
 
-    //public GameObject brokenTracks;
+    public GameObject hud;
+    public GameObject winScreen;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -59,6 +61,13 @@ public class LapChange : MonoBehaviour
             ps.Play();
             Debug.Log("Play Particles");
             SoundManager.instance.PlaySoundFXClip(lapSound, transform, volume);
+
+            if (currentLapScore == 2)
+            {
+                collision.gameObject.SetActive(false);
+                winScreen.SetActive(true);
+                hud.SetActive(false);
+            }
 
         }
         

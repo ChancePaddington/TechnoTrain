@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public FollowLine followLine;
     public DialogueController dialogueController;
 
+    //Animations
     public Animator transition;
     public float transitionTime;
 

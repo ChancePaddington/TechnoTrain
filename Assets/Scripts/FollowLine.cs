@@ -6,7 +6,7 @@ public class FollowLine : MonoBehaviour
    
     private Rigidbody2D rb;
     public SpeedManager speedManager;
-    public LineRenderer lineRenderer;
+    //public LineRenderer lineRenderer;
 
     //Line waypoint variables
     public Transform playerTarget;
@@ -20,7 +20,7 @@ public class FollowLine : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        lineRenderer = rb.GetComponent<LineRenderer>();
+        //lineRenderer = rb.GetComponent<LineRenderer>();
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
 
         currentLineArray = redWaypoints;
@@ -41,15 +41,15 @@ public class FollowLine : MonoBehaviour
     {
         MoveToTarget();
 
-        if (lineRenderer.positionCount >= 2)
-        {
-            Vector2 startpos = lineRenderer.GetPosition(0);
-            Vector2 endpos = lineRenderer.GetPosition(1);
-            Vector2 direction = endpos - startpos;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            playerTarget.position = endpos;
-            playerTarget.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        //if (lineRenderer.positionCount >= 2)
+        //{
+        //    Vector2 startpos = lineRenderer.GetPosition(0);
+        //    Vector2 endpos = lineRenderer.GetPosition(1);
+        //    Vector2 direction = endpos - startpos;
+        //    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //    playerTarget.position = endpos;
+        //    playerTarget.rotation = Quaternion.Euler(0, 0, angle);
+        //}
     }
 
     private void MoveToTarget()

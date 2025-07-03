@@ -35,7 +35,7 @@ public class SpeedManager : MonoBehaviour
     {
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
         currentSpeed += accelerationSpeed * Time.deltaTime;
-        speedometer.text = ((int)currentSpeed).ToString() + "Mph";
+        speedometer.text = ((int)currentSpeed * 10).ToString() + "Mph";
     }
 
     public void Deceleration()
