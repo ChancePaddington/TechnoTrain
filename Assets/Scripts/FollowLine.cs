@@ -1,7 +1,4 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 
 public class FollowLine : MonoBehaviour
@@ -10,7 +7,6 @@ public class FollowLine : MonoBehaviour
     private Rigidbody2D rb;
     public SpeedManager speedManager;
     public LineRenderer lineRenderer;
-    public Transform playerSprite;
 
     //Line waypoint variables
     public Transform playerTarget;
@@ -51,8 +47,8 @@ public class FollowLine : MonoBehaviour
             Vector2 endpos = lineRenderer.GetPosition(1);
             Vector2 direction = endpos - startpos;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            playerSprite.position = endpos;
-            playerSprite.rotation = Quaternion.Euler(0, 0, angle);
+            playerTarget.position = endpos;
+            playerTarget.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
