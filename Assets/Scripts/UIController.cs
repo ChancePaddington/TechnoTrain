@@ -25,9 +25,9 @@ public class UIController : MonoBehaviour
         dialogueController = FindAnyObjectByType<DialogueController>();
     }
 
-    public void BeatButton()
+    public void BrakeButton()
     {
-        speedManager.MoveOnBeat();
+        speedManager.Deceleration();
     }
 
     public void ChangeToGreen()

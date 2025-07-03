@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 public class SpeedManager : MonoBehaviour
 {
-    [SerializeField] public int maxSpeed = 50;
+    [SerializeField] public float maxSpeed = 100f;
     [Range(0f, 50f)]
-    [SerializeField] private int movementSpeed = 4;
+    [SerializeField] private float movementSpeed = 4f;
     [Range(0f, 50f)]
-    [SerializeField] private int accelerationSpeed = 1;
+    [SerializeField] private float accelerationSpeed = 50f;
     [Range(0f, 50f)]
-    [SerializeField] public int decelerationSpeed = 5;
+    [SerializeField] public float decelerationSpeed = 1f;
 
     //Audio
     public SoundLoopManager soundLoopManager;
     [SerializeField] AudioClip railSound;
+    [SerializeField] AudioClip decelerationSound;   
     [Range(1, 10)]
     [SerializeField] float volume = 1f;
 
@@ -33,26 +34,14 @@ public class SpeedManager : MonoBehaviour
     private void Update()
     {
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
-        speedometer.text = currentSpeed + "Mph";
-    }
-
-    public void MoveOnBeat()
-    {
-        //Checking if gameobject beat checker is active at time of input
-        if (beatChecker.activeSelf)
-        {
-            currentSpeed += accelerationSpeed;
-
-        }
-        else
-        {
-            Deceleration();
-        }
+        currentSpeed += accelerationSpeed * Time.deltaTime;
+        speedometer.text = ((int)currentSpeed).ToString() + "Mph";
     }
 
     public void Deceleration()
     {
         currentSpeed -= decelerationSpeed;
+        SoundManager.instance.PlaySoundFXClip(decelerationSound, transform, volume);
     }
 
 }
