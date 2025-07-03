@@ -48,6 +48,7 @@ public class LapChange : MonoBehaviour
                 junction.speedLimit += lapSpeedLimit;
             }
             currentLapScore += lapIncrease;
+            //ScoreManager.Instance.AddScore(1);
             speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
             speedManager.decelerationSpeed = speedManager.decelerationSpeed += lapDeceleration;
             ps.Play();
