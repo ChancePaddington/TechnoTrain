@@ -40,7 +40,7 @@ public class Junction : MonoBehaviour
         speedLimitSign.text = speedLimit * 10 + "Mph";
 
         float playerSpeed = speedManager.currentSpeed;  
-        if (playerSpeed > speedLimit)
+        if (playerSpeed > speedLimit - 3)
         {
             speedWarning.SetBool("speedBool", true);
         }

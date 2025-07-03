@@ -9,7 +9,7 @@ public class LapChange : MonoBehaviour
 {
     private List<Junction> junctions;
     public SpeedManager speedManager;
-    [SerializeField] private int lapSpeedLimit = 5;
+    //[SerializeField] private int lapSpeedLimit = 5;
     //[SerializeField] private int lapMaxSpeed = 5;
     //[SerializeField] private int lapDeceleration = 2;
 
@@ -49,10 +49,10 @@ public class LapChange : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Iterates across a list of Junctions 
-            foreach (Junction junction in junctions)
-            {
-                junction.speedLimit -= lapSpeedLimit;
-            }
+            //foreach (Junction junction in junctions)
+            //{
+            //    junction.speedLimit -= lapSpeedLimit;
+            //}
             currentLapScore += lapIncrease;
             //ScoreManager.Instance.AddScore(1);
             //speedManager.maxSpeed = speedManager.maxSpeed += lapMaxSpeed;
@@ -62,7 +62,7 @@ public class LapChange : MonoBehaviour
             Debug.Log("Play Particles");
             SoundManager.instance.PlaySoundFXClip(lapSound, transform, volume);
 
-            if (currentLapScore == 2)
+            if (currentLapScore == 5)
             {
                 collision.gameObject.SetActive(false);
                 winScreen.SetActive(true);
