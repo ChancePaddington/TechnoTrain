@@ -26,9 +26,6 @@ public class Junction : MonoBehaviour
     //Animations
     public Animator speedWarning;
 
-    public int gameOver;
-    private float transitionSpeed = 2f;
-
     private void Start()
     {
         speedManager = FindAnyObjectByType<SpeedManager>();

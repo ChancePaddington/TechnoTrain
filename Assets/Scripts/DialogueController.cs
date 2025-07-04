@@ -30,14 +30,16 @@ public class DialogueController : MonoBehaviour
         foreach (char Character in sentences[dialogueIndex].ToCharArray())
         {
             dialogueText.text += Character;
-            SoundManager.instance.PlaySoundFXClip(dialogueRadioPickUp, transform, volume);
             yield return new WaitForSeconds(dialogueSpeed);
         }
+        
         dialogueIndex++;
     }
 
     public void NextSentence()
     {
+        SoundManager.instance.PlaySoundFXClip(dialogueRadioPickUp, transform, volume);
+
         if(dialogueIndex <= sentences.Length - 1)
         {
             dialogueText.text = "";

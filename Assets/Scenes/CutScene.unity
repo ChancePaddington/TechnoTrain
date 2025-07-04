@@ -964,10 +964,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 2074500473}
   sentences:
-  - Techno Train.
-  - All aboard.
-  - Choochoochoochoochoochoochoochoochoo
-  - Choo...
+  - The following is a gentle reminder for all prospective candidates to notify their
+    next of kin before taking part in Techno Trains exciting Techno Training programme.
+  - In the event of the untimely demise of unskilled candidates, Techno Train Inc.
+    will keep possessions of the candidates's remains for the legally mandated period
+    of 48 hours before incineration.
+  - In order to meet this months Techno Performance quota, candidates must complete
+    10 laps in under 1:00 per lap.
+  - The Techno Performance quota is subject to change at any time. Candidates that
+    fail to meet the Techno Performance will be expunged from the Techno Trainee
+    and Techno Benefits programme.
   dialogueSpeed: 0.05
   dialogueAnimator: {fileID: 525124524}
   trackScene: 1
@@ -1244,8 +1250,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1305,14 +1311,14 @@ RectTransform:
   m_GameObject: {fileID: 2074500472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.36061218, y: 0.85858, z: 0.85858}
+  m_LocalScale: {x: 0.3911921, y: 0.9313876, z: 0.9313876}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525124521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: 18.8}
+  m_AnchoredPosition: {x: -2.9, y: 17.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2082308062
