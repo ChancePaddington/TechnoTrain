@@ -8,6 +8,7 @@ public class CountdownTimer : MonoBehaviour
     public bool startOnAwake = true;
     public bool loop = false;
 
+    public Animator timerWarning;
     public TextMeshProUGUI timerText;
     public UnityEvent onTimerEnd;
     private float timeRemaining;
@@ -39,6 +40,15 @@ public class CountdownTimer : MonoBehaviour
 
         UpdateTimerDisplay();
         
+        if (timeRemaining < 30f)
+        {
+            timerWarning.SetBool("timerFlash", true);
+        }
+        else
+        {
+            timerWarning.SetBool("timerFlash", false);
+        }
+
     }
 
     public void StartTimer()
