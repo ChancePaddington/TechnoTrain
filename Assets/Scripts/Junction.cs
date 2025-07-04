@@ -20,7 +20,8 @@ public class Junction : MonoBehaviour
 
     //Audio
     [SerializeField] AudioClip junctionSound;
-    [Range(1, 10)]
+    [SerializeField] AudioClip alarmSound;
+    [Range(0, 10)]
     [SerializeField] float volume = 1f;
 
     //Animations
@@ -40,9 +41,10 @@ public class Junction : MonoBehaviour
         speedLimitSign.text = speedLimit * 10 + "Mph";
 
         float playerSpeed = speedManager.currentSpeed;  
-        if (playerSpeed > speedLimit - 2)
+        if (playerSpeed > speedLimit - 1)
         {
             speedWarning.SetBool("speedBool", true);
+            //SoundManager.instance.PlaySoundFXClip(alarmSound, transform, volume);
         }
         else
         {

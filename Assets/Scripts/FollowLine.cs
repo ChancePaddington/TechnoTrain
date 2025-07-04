@@ -32,10 +32,10 @@ public class FollowLine : MonoBehaviour
         playerTarget.position = currentLineArray[0].position;
 
         Vector3 direction = currentLineArray[currentWaypointIndex].transform.position - transform.position;
-        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speedManager.currentSpeed;
+        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speedManager.currentSpeed * Time.deltaTime;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot);
+        transform.rotation = Quaternion.Euler(0, 0, rot);                                                                         
 
     }
 
@@ -106,5 +106,11 @@ public class FollowLine : MonoBehaviour
             currentLineArray = redWaypoints;
             lineColour = LineColourEnum.LineColour.red;
         }
+    }
+
+
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

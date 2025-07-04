@@ -4,15 +4,23 @@ using UnityEngine.Events;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float duration = 60f;
-    public bool startOnAwake = true;
-    public bool loop = false;
-
-    public Animator timerWarning;
     public TextMeshProUGUI timerText;
     public UnityEvent onTimerEnd;
     private float timeRemaining;
     private bool isRunning;
+
+    public float duration = 300f;
+    public bool startOnAwake = true;
+    public bool loop = false;
+
+    public GameObject endScreen;
+
+    public Animator timerWarning;
+
+    //Audio
+    [SerializeField] AudioClip alarmSound;
+    [UnityEngine.Range(1, 10)]
+    [SerializeField] float volume = 1f;
 
     private void Awake()
     {
@@ -31,15 +39,16 @@ public class CountdownTimer : MonoBehaviour
         {
             timeRemaining = 0f;
             isRunning = false;
+            endScreen.SetActive(true);
             onTimerEnd?.Invoke();
 
             if (loop)
-                StartTimer(); 
-            
+                StartTimer();
+
         }
 
         UpdateTimerDisplay();
-        
+
         if (timeRemaining < 30f)
         {
             timerWarning.SetBool("timerFlash", true);
@@ -47,6 +56,11 @@ public class CountdownTimer : MonoBehaviour
         else
         {
             timerWarning.SetBool("timerFlash", false);
+        }
+
+        if (timeRemaining == 20f)
+        {
+            SoundManager.instance.PlaySoundFXClip(alarmSound, transform, volume);
         }
 
     }
@@ -62,7 +76,7 @@ public class CountdownTimer : MonoBehaviour
         isRunning = false;
     }
 
-    public void ResetTimer (float newDuration)
+    public void ResetTimer(float newDuration)
     {
         duration = newDuration;
         StartTimer();

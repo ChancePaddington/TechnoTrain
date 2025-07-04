@@ -41,7 +41,7 @@ public class SpeedManager : MonoBehaviour
     public void Deceleration()
     {
         currentSpeed -= decelerationSpeed;
-        SoundManager.instance.PlaySoundFXClip(decelerationSound, transform, volume);
+        //SoundManager.instance.PlaySoundFXClip(decelerationSound, transform, volume);
     }
 
 }
