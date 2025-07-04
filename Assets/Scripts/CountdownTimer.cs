@@ -17,6 +17,8 @@ public class CountdownTimer : MonoBehaviour
 
     public Animator timerWarning;
 
+    //public TextMeshProUGUI endTime;
+
     //Audio
     [SerializeField] AudioClip alarmSound;
     [UnityEngine.Range(1, 10)]
@@ -62,6 +64,8 @@ public class CountdownTimer : MonoBehaviour
         {
             SoundManager.instance.PlaySoundFXClip(alarmSound, transform, volume);
         }
+
+        //endTime.text = "Time Remaining: " + ((int)timeRemaining * 10).ToString();
 
     }
 

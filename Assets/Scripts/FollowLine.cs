@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 
 public class FollowLine : MonoBehaviour
@@ -17,6 +18,9 @@ public class FollowLine : MonoBehaviour
     public Transform[] currentLineArray;
     public LineColourEnum.LineColour lineColour;
     private int currentWaypointIndex = 0;
+
+    public GameObject hud;
+    public GameObject endScreen;
 
     private void Start()
     {
@@ -112,5 +116,7 @@ public class FollowLine : MonoBehaviour
     public void Deactivate()
     {
         gameObject.SetActive(false);
+        endScreen.SetActive(true);
+        hud.SetActive(false);
     }
 }

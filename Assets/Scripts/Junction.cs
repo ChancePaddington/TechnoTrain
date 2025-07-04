@@ -8,12 +8,11 @@ public class Junction : MonoBehaviour
 {
     private SpeedManager speedManager;
     [SerializeField] private Transform reset;
+    [SerializeField] public int damage = 5;
 
     //UI
     [SerializeField] public int speedLimit;
     public TextMeshProUGUI speedLimitSign;
-    public GameObject hud;
-    public GameObject endScreen;
 
     //Particle Effects
     public ParticleSystem ps;
@@ -64,9 +63,14 @@ public class Junction : MonoBehaviour
             //If less than set speed limit
             if (playerSpeed > speedLimit)
             {
-                collision.gameObject.SetActive(false);
-                endScreen.SetActive(true);
-                hud.SetActive(false);
+                Health health = collision.gameObject.GetComponent<Health>();
+                Debug.Log("Calling Health script");
+                if (health != null)
+                {
+                    Debug.Log("Taking damage");
+                    health.TakeDamage(damage);
+                }
+               
             }
             else
             {

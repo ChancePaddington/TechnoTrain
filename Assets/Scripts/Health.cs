@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        SoundManager.instance.PlaySoundFXClip(hitSound, transform, volume);
+        //SoundManager.instance.PlaySoundFXClip(hitSound, transform, volume);
         currentHealth -= damage;
         //Ensure health doesn't go below 0 or above 9
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);

@@ -13,6 +13,7 @@ public class BrokenTrack : MonoBehaviour
 
     public GameObject endScreen;
     public GameObject hud;
+    public int damage = 5;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,11 +21,14 @@ public class BrokenTrack : MonoBehaviour
         {
             if (collision.GetComponent<FollowLine>().lineColour == obstacleColour)
             {
-                collision.gameObject.SetActive(false);
+                Health health = collision.gameObject.GetComponent<Health>();
+                Debug.Log("Calling Health script");
+                if (health != null)
+                {
+                    Debug.Log("Taking damage");
+                    health.TakeDamage(damage);
+                }
                 SoundManager.instance.PlaySoundFXClip(destroySound, transform, volume);
-                endScreen.SetActive(true);
-                hud.SetActive(false);
-                //StartCoroutine(TransitionToGameOverScene());
             }
         }
     }
