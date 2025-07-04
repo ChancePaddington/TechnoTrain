@@ -8,6 +8,8 @@ public class UIController : MonoBehaviour
     public SpeedManager speedManager;
     public FollowLine followLine;
     public DialogueController dialogueController;
+    public GameObject creditsImage;
+    public GameObject hudImage;
 
     //Animations
     public Animator transition;
@@ -62,6 +64,18 @@ public class UIController : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void Credits()
+    {
+        creditsImage.SetActive(true);
+        hudImage.SetActive(false);
+    }
+
+    public void CloseCredits()
+    {
+        creditsImage.SetActive(false);
+        hudImage.SetActive(true);
     }
 
     public void Restart()

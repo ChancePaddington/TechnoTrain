@@ -596,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 105246847}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7010308, w: 0.71313107}
-  m_LocalPosition: {x: 11.5131035, y: -65.52225, z: 0}
+  m_LocalPosition: {x: 7.42, y: -65.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1677,6 +1677,8 @@ MonoBehaviour:
   speedManager: {fileID: 0}
   followLine: {fileID: 0}
   dialogueController: {fileID: 0}
+  creditsImage: {fileID: 0}
+  hudImage: {fileID: 0}
   transition: {fileID: 0}
   transitionTime: 0
   dialogueNextSound: {fileID: 0}
@@ -9096,6 +9098,8 @@ MonoBehaviour:
   speedManager: {fileID: 0}
   followLine: {fileID: 0}
   dialogueController: {fileID: 0}
+  creditsImage: {fileID: 0}
+  hudImage: {fileID: 0}
   transition: {fileID: 168504437}
   transitionTime: 0
   dialogueNextSound: {fileID: 8300000, guid: c5818924c5098e1448c8eb06b290927b, type: 3}
@@ -13143,6 +13147,8 @@ MonoBehaviour:
   speedManager: {fileID: 0}
   followLine: {fileID: 0}
   dialogueController: {fileID: 0}
+  creditsImage: {fileID: 0}
+  hudImage: {fileID: 0}
   transition: {fileID: 168504437}
   transitionTime: 0
   dialogueNextSound: {fileID: 0}
