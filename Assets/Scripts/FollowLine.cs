@@ -6,6 +6,7 @@ public class FollowLine : MonoBehaviour
    
     private Rigidbody2D rb;
     public SpeedManager speedManager;
+    private SpriteRenderer sprite;
     //public LineRenderer lineRenderer;
 
     //Line waypoint variables
@@ -20,6 +21,7 @@ public class FollowLine : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         //lineRenderer = rb.GetComponent<LineRenderer>();
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
 
@@ -40,16 +42,6 @@ public class FollowLine : MonoBehaviour
     private void Update()
     {
         MoveToTarget();
-
-        //if (lineRenderer.positionCount >= 2)
-        //{
-        //    Vector2 startpos = lineRenderer.GetPosition(0);
-        //    Vector2 endpos = lineRenderer.GetPosition(1);
-        //    Vector2 direction = endpos - startpos;
-        //    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //    playerTarget.position = endpos;
-        //    playerTarget.rotation = Quaternion.Euler(0, 0, angle);
-        //}
     }
 
     private void MoveToTarget()
@@ -67,6 +59,10 @@ public class FollowLine : MonoBehaviour
         rb.linearVelocity = transform.up * speedManager.currentSpeed;
         Vector3 direction = currentLineArray[currentWaypointIndex].transform.position - transform.position;
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * speedManager.currentSpeed;
+
+        //Rotate sprite to current waypoint position
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     //Based on distance to target, switch to next waypoint when current waypoint is reached
