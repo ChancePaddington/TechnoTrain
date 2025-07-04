@@ -25,6 +25,9 @@ public class Junction : MonoBehaviour
 
     //Animations
     public Animator speedWarning;
+    public Animator greenWarning;
+    public Animator redWarning;
+    public Animator purpleWarning;
 
     private void Start()
     {
@@ -37,7 +40,7 @@ public class Junction : MonoBehaviour
         speedLimitSign.text = speedLimit * 10 + "Mph";
 
         float playerSpeed = speedManager.currentSpeed;  
-        if (playerSpeed > speedLimit - 3)
+        if (playerSpeed > speedLimit - 2)
         {
             speedWarning.SetBool("speedBool", true);
         }
@@ -68,6 +71,9 @@ public class Junction : MonoBehaviour
                 Debug.Log("Play Particles");
                 ps.Play();
                 SoundManager.instance.PlaySoundFXClip(junctionSound, transform, volume);
+                greenWarning.SetBool("greenFlash", false);
+                redWarning.SetBool("redFlash", false);
+                purpleWarning.SetBool("purpleFlash", false);
             }
         }
     }

@@ -1,8 +1,8 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem.HID;
+using UnityEngine.Rendering;
 
-public class BrokenTrack : MonoBehaviour
+public class GreenTrackWarning : MonoBehaviour
 {
     [SerializeField] private LineColourEnum.LineColour obstacleColour;
 
@@ -11,8 +11,7 @@ public class BrokenTrack : MonoBehaviour
     [UnityEngine.Range(1, 10)]
     [SerializeField] float volume = 1f;
 
-    public GameObject endScreen;
-    public GameObject hud;
+    public Animator greenWarning;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,11 +19,12 @@ public class BrokenTrack : MonoBehaviour
         {
             if (collision.GetComponent<FollowLine>().lineColour == obstacleColour)
             {
-                collision.gameObject.SetActive(false);
+                greenWarning.SetBool("greenFlash", true);
                 SoundManager.instance.PlaySoundFXClip(destroySound, transform, volume);
-                endScreen.SetActive(true);
-                hud.SetActive(false);
-                //StartCoroutine(TransitionToGameOverScene());
+            }
+            else
+            {
+                greenWarning.SetBool("greenFlash", false);
             }
         }
     }

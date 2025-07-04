@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: {fileID: 0}
-  speedLimit: 30
+  speedLimit: 20
   speedLimitSign: {fileID: 0}
   hud: {fileID: 0}
   endScreen: {fileID: 0}
@@ -175,7 +175,9 @@ MonoBehaviour:
   junctionSound: {fileID: 8300000, guid: 82c7617364236754bb3d3b4230a501fe, type: 3}
   volume: 1
   speedWarning: {fileID: 0}
-  gameOver: 4
+  greenWarning: {fileID: 0}
+  redWarning: {fileID: 0}
+  purpleWarning: {fileID: 0}
 --- !u!1001 &18156828683783983
 PrefabInstance:
   m_ObjectHideFlags: 0
