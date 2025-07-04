@@ -42,6 +42,7 @@ public class LapChange : MonoBehaviour
     {
         lapNumberSign.text = "Lap: " + currentLapScore;
         endLapScore.text = "Laps Lasted: " + currentLapScore;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,7 +63,7 @@ public class LapChange : MonoBehaviour
             Debug.Log("Play Particles");
             SoundManager.instance.PlaySoundFXClip(lapSound, transform, volume);
 
-            if (currentLapScore == 5)
+            if (currentLapScore == 10)
             {
                 collision.gameObject.SetActive(false);
                 winScreen.SetActive(true);
