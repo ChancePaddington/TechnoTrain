@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spark_Glow 1_0: -7883003574942041055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
